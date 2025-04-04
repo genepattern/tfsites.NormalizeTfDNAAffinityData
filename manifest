@@ -33,7 +33,7 @@ p1_value=
 
 p2_MODE=
 p2_TYPE=TEXT
-p2_default_value=relative-aff-table_site_<core.binding.site.definition>
+p2_default_value=relative-aff-data_site=<core.binding.site.definition>
 p2_description=Base name of the output files.
 p2_fileFormat=
 p2_flag=
