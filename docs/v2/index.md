@@ -26,7 +26,11 @@ There is a wide range of experimental techniques that can be used to generate af
 ### Inputs and Outputs
 
 - <span style="color: red;">*</span> **raw data (.tsv)** 
-    - File containing the raw affinity dataset. 
+    - File containing the raw affinity dataset.
+- <span style="color: red;">*</span>**output filename (string)**
+    - Base name of the output files.
+ 
+### Other Parameters
 - <span style="color: red;">*</span>**DNA sequence column (integer)**
     - Number of the column containing the DNA sequences in the input file (1-indexed, 1 is the first column).
 - <span style="color: red;">*</span>**affinity column (integer)**
@@ -35,17 +39,9 @@ There is a wide range of experimental techniques that can be used to generate af
     - If `True`, a header exists in the input file. If `False`, no header exists.
 - <span style="color: red;">*</span>**core binding site definition (string)**
     - IUPAC definition of the core transcription factor binding site (see [here](https://www.bioinformatics.org/sms/iupac.html)). The length of the IUPAC definition should be the same length k as the k-mers in the raw affinity file.
-- <span style="color: red;">*</span>**output filename (string)**
-    - Base name of the output files.
- 
-### Other Parameters
-
 - **output image as svg (boolean)**
     - `Default = False`
     - Option to output images as `.svg` in addition to `.png`. For manuscript preparation, `.svg` format is preferable.
-- **plot resolution (integer)**
-    - `Default = 200`
-    - Resolution of the plot, in dots (pixels) per inch. Manuscripts require 300 DPI. The DPI does not affect the resolution of `.svg` files.
 
 ## Input Files
 
