@@ -1,6 +1,6 @@
 # tfsites.NormalizeTfDnaAffinityData v2
 
-**Author(s):** Joe Solvason
+**Author(s):** Joe Solvason, Simran Jandu
 
 **Contact:** Joe Solvason (solvason@ucsd.edu)
 
