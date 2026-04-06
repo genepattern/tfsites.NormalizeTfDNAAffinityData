@@ -13,9 +13,10 @@
         "description": "",
         "hidden": false,
         "parameters": [
+            "normalization.method",
             "core.binding.site.definition",
             "DNA.sequence.column",
-            "affinity.column",
+            "value.column",
             "header.present",
             "output.image.as.svg"
         ]

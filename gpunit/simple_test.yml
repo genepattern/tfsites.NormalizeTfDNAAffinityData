@@ -13,7 +13,8 @@ params:
     raw.data: "data/01-input_ets-raw-pbm-data.txt" 
     core.binding.site.definition: "NNGGAWNN"
     DNA.sequence.column: 1
-    affinity.column: 4
+    normalization.method: relative
+    value.column: 4
     header.present: FALSE
 assertions:
     jobStatus: success

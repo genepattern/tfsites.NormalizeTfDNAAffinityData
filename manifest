@@ -3,13 +3,13 @@
 JVMLevel=
 LSID=urn\:lsid\:8080.gpserver.ip-172-31-26-71.ip-172-31-26-71.ec2.internal\:genepatternmodules\:706\:1
 author=Joe Solvason
-commandLine=python /build/tfsites-webportal/01-normalizeTfDnaAffinityData/01-normalizeTfDnaAffinityData.py -r <raw.data> -b <core.binding.site.definition> -d <DNA.sequence.column> -a <affinity.column>  -p <header.present> -S <output.image.as.svg> -o <output.filename>         
+commandLine=python /build/tfsites-webportal/01-normalizeTfDnaAffinityData/01-normalizeTfDnaAffinityData.py -r <raw.data> -b <core.binding.site.definition> -d <DNA.sequence.column> -a <value.column>  -p <header.present> -S <output.image.as.svg> -o <output.filename> -n <normalization.method>
 # -t <reference.relative.affinity.table.output.filename>
 cpuType=any
 description=NormalizeTfDnaAffinityData generates a relative affinity dataset which can then be used in other TFSites modules to score binding sites. This tool normalizes a raw affinity dataset relative to the sequence with the highest value that follows the core binding site definition. The resulting dataset will report the relative affinity value for every sequence in the original dataset, ranging from 0 to 1.
 documentationUrl=https://genepattern.github.io/tfsites.NormalizeTfDNAAffinityData/v2/
 fileFormat=
-job.docker.image=genepattern/tfsites\:16.3
+job.docker.image=genepattern/tfsites\:18.0
 language=any
 name=tfsites.NormalizeTfDNAAffinityData
 os=any
@@ -75,10 +75,10 @@ p4_value=
 p5_MODE=
 p5_TYPE=Integer
 p5_default_value=4
-p5_description=Number of the column containing the raw affinity values in the input file (1-indexed, 1 is the first column).
+p5_description=Number of the column containing the value of interest in the input file (1-indexed, 1 is the first column). This value can be raw affinity or e-score.
 p5_fileFormat=
 p5_flag=
-p5_name=affinity.column
+p5_name=value.column
 p5_numValues=1..1
 p5_optional=
 p5_prefix=
@@ -117,6 +117,20 @@ p7_type=java.lang.String
 p7_value=FALSE\=FALSE;TRUE\=TRUE
 
 
+p8_MODE=
+p8_TYPE=TEXT
+p8_default_value=relative
+p8_description=Normalization method. relative, signal-to-noise or e-score.
+p8_fileFormat=
+p8_flag=
+p8_name=normalization.method
+p8_numValues=1..1
+p8_optional=
+p8_prefix=
+p8_prefix_when_specified=
+p8_type=java.lang.String
+p8_value=relative;signal-to-noise;e-score
+
 #p5_MODE=
 #p5_TYPE=TEXT
 #p5_default_value=<raw.data_basename>.norm.pbm.tsv
@@ -139,4 +153,5 @@ src.repo=https://github.com/genepattern/tfsites.DefineTfSites
 taskDoc=
 taskType=Transcription factor analysis
 userid=ted
-version=Draft initial release
+version=adding normalization methid parameter and renaming affinity.index to value.index
+
